@@ -24,7 +24,7 @@ from flask import (
 class Pages():
 
     def __init__(self,this):
-	     # this = modle ( sqlite , token , mail )
+       # this = modle ( sqlite , token , mail )
        self.this = this
 	
 
