@@ -1,17 +1,27 @@
-from app.method import Route
-from app.Controller import Control
-from flask import Flask
+# -*- coding: utf-8 -*-
+ 
 import os
-
+###
+from flask import Flask
+from app.config    import config
+###
+from app.model     import Router
+from app.model     import SendMail
+from app.model     import Token
+###
+from app.Databases import SQLite
+###
+from app.Controller import Pages
 
 app = Flask(os.getcwd())
+config(app)
 
-app.secret_key = 'any random string'
+class model:
+	def __init__(self):
 
-app.config.from_object(__name__)
+		self.mail   = SendMail (  app)
+		self.token  = Token    (  app)
+		self.sqlite = SQLite   (  app)
 
-route = Route(app)
-
-pages = Control()
-
-
+route  = Router(app)
+pages  = Pages(model())
