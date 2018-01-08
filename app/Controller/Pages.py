@@ -1,17 +1,18 @@
 from flask import (
-		redirect,url_for,request,
-		make_response,abort,render_template
+		redirect,url_for,request,session,
+		make_response,abort,render_template,
+        jsonify
 	)
-from app.Databases import SQLite
 
-class Control(SQLite):
-	# self.exce(" command SQL ")
+class Pages():
 
-	def __init__(self):
-		super(Control,self).__init__("db.sql")
+    def __init__(self,this):
+	# this = modle ( sqlite , token , mail )
+        self.this = this
+	
 
+    def home(self):
+        return render_template("home.html")
 
-	def index(self):
-		return render_template("login.html")
-
-
+    def login(self):
+        return render_template("login.html")
