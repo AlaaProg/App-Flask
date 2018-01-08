@@ -2,8 +2,8 @@ import sqlite3 as sql
 
 
 class SQLite():
-	def __init__(self,DBName):
-		self.connect = sql.connect("app/Databases/dbite/"+DBName)
+	def __init__(self,app):
+		self.connect = sql.connect(app.config["DB:SQLite"])
 		self.cur = self.connect.cursor()
 
 	def exec(self,command):
