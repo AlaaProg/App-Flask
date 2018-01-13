@@ -1,8 +1,12 @@
+# -*- coding: utf-8 -*-
+
 import os
 
 class config():
     
-    def __init__(self,app):   
+    def __init__(self,app):
+        
+            
 
         #app 
         app.debug = True
@@ -15,14 +19,15 @@ class config():
             # Config Mail 
             'MAIL_SERVER'   : 'smtp.gmail.com',
             'MAIL_PORT'     : 465,
-            'MAIL_USERNAME' : 'youremail@gamil.com',
-            'MAIL_PASSWORD' : 'passwordEmail',
+            'MAIL_USERNAME' : 'apps.whk@gmail.com',
+            'MAIL_PASSWORD' : 'alaa!@#$%',
             'MAIL_USE_TLS'  : False,
             'MAIL_USE_SSL'  : True,
 
 
             #JSON
             "token_file"         : "app/Json/token.json",
+            "DB:Json"            : "app/Json/data.json",
 
             #DB
             "DB:SQLite"     : "app/Databases/dbite/db.sql",
