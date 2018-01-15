@@ -19,8 +19,8 @@ class config():
             # Config Mail 
             'MAIL_SERVER'   : 'smtp.gmail.com',
             'MAIL_PORT'     : 465,
-            'MAIL_USERNAME' : 'apps.whk@gmail.com',
-            'MAIL_PASSWORD' : 'alaa!@#$%',
+            'MAIL_USERNAME' : '',
+            'MAIL_PASSWORD' : '',
             'MAIL_USE_TLS'  : False,
             'MAIL_USE_SSL'  : True,
 
