@@ -1,7 +1,7 @@
 # App-Flask
 
-__new To Flask __
-___ I am add 'Class Cookies' in heipers.py ___
+__new To Flask
+__ I am add 'Class Cookies' in heipers.py
 ```
 SetCookies And GetCookies 
 
@@ -44,8 +44,8 @@ route.get("/home/<name>",html="home.html")
 route.get("/login",html="login.html")
 
 ```
-__automatically import  Controllers and set in view  __
-__you not need do to  import __
+__automatically import  Controllers and set in view__
+__you not need do to  import__
 __^_^__
 __Controller -> Page.py__
 
