@@ -1,9 +1,9 @@
 import importlib as lib ,os
 #####
-from flask import Flask
+from flask import Flask,Cookies
 from app.config    import config
 #####
-from app.model     import Router,SendMail,Token,Cookies
+from app.model     import Router,SendMail,Token
 #####
 from app.DB import SQLite,MySQL,DBJson
 
