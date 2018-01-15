@@ -6,11 +6,15 @@ __Route.py__
 ```
 # route. ( GET POST PUT DELETE )
 ## 
-route.GET ( "/"     , pages.home     )
-route.POST( "/"     , pages.home     )
+route.get ( "/"     , view.pages.home     )
+route.get( "/"     , view.pages.home     )
 ## 
-route.GET ( "/login" , pages.login    )
-route.POST( "/login" , pages.login )
+route.get ( "/login" , view.pages.login    )
+route.get( "/login" , view.pages.login )
+
+# You Can't make '2 route' for same html file 
+route.get("/home/<name>",html="home.html")
+route.get("/login",html="login.html")
 
 ```
 __Controller -> Page.py__
