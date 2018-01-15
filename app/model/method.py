@@ -9,7 +9,7 @@ class Router():
 	def get(self,path,function=None,html=None,**kws):
 		if function == None:
 			a = lambda **kw:render_template(str(html),**kw,**kws)
-			self.app.add_url_rule(path,html.split(".")[0],a, methods=["GET"])
+			self.app.add_url_rule(path,html,a, methods=["GET"])
 
 		else:
 			self.app.add_url_rule( path,function.__name__,function,methods=["GET"])
@@ -22,7 +22,7 @@ class Router():
 	def PostGet(self,path,function=None,html=None,**kws):
 		if function == None:
 			a = lambda **kw:render_template(str(html),**kw,**kws)
-			self.app.add_url_rule(path,html.split(".")[0],a, methods=["GET","POST"])
+			self.app.add_url_rule(path,html,a, methods=["GET","POST"])
 		else:
 			self.app.add_url_rule(path,function.__name__,function,methods=["GET","POST"])
 
