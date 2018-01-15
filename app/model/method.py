@@ -1,18 +1,35 @@
+from flask import render_template
+
 
 class Router():
 
 	def __init__(self,app):
 		self.app = app
 
-	def GET(self,path,function):
-		self.app.add_url_rule( path, function.__name__, function, methods=["GET"])
+	def get(self,path,function=None,html=None,**kws):
+		if function == None:
+			a = lambda **kw:render_template(str(html),**kw,**kws)
+			self.app.add_url_rule(path,html.split(".")[0],a, methods=["GET"])
 
-	def POST(self,path,function):
-		self.app.add_url_rule( path, function.__name__, function, methods=["POST"])
+		else:
+			self.app.add_url_rule( path,function.__name__,function,methods=["GET"])
+	
 
-	def PUT(self,path,function):
+	def post(self,path,function):
+		self.app.add_url_rule(path,function.__name__,function,methods=["POST"])
+	
+
+	def PostGet(self,path,function=None,html=None,**kws):
+		if function == None:
+			a = lambda **kw:render_template(str(html),**kw,**kws)
+			self.app.add_url_rule(path,html.split(".")[0],a, methods=["GET","POST"])
+		else:
+			self.app.add_url_rule(path,function.__name__,function,methods=["GET","POST"])
+
+	
+	def put(self,path,function):
 		self.app.add_url_rule( path, function.__name__, function, methods=["PUT"])
 
-	def DELETE(self,path,function):
+	def delete(self,path,function):
 		self.app.add_url_rule( path, function.__name__, function, methods=["DELETE"])
 
