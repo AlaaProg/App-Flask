@@ -4,12 +4,5 @@ from app import route,view,app
 
 route.get("/",view.Pages.home)
 
-# route.PostGet("/login",view.Pages..login)
 
-# route.PostGet("/register",view.Pages..register)
-
-
-# route.get("/<name>/<age>",html="home.html",work="Developer")
-
-
-# app.run(port=8010)
+app.run(port=8010)
